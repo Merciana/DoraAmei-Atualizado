@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/Login_v4/images/icons/favicon.ico" />
+    <link rel="stylesheet" href="/Login_v4/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/Login_v4/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/Login_v4/fonts/iconic/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="/Login_v4/vendor/animate/animate.css">
+    <link rel="stylesheet" href="/Login_v4/vendor/css-hamburgers/hamburgers.min.css">
+    <link rel="stylesheet" href="/Login_v4/vendor/animsition/css/animsition.min.css">
+    <link rel="stylesheet" href="/Login_v4/vendor/select2/select2.min.css">
+    <link rel="stylesheet" href="/Login_v4/vendor/daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" href="/Login_v4/css/util.css">
+    <link rel="stylesheet" href="/Login_v4/css/main.css">
+    <title>Cadastrar</title>
+</head>
+
+<body>
+    <div class="limiter">
+        <div class="container-login100" style="background-image: url('/Login_v4/images/planoDorama.jpg');">
+            <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+                <form action="salvarUsuario" method="post" class="login100-form validate-form">
+                    <span class="login100-form-title p-b-49">
+						Cadastrar
+					</span>
+
+                    <div class="wrap-input100 validate-input m-b-23" data-validate="Campo Obrigatório">
+                        <span class="label-input100">Nome Completo</span>
+                        <input class="input100" type="text" name="username" placeholder="Digite seu nome completo">
+                        <span class="focus-input100" data-symbol="&#xf206;"></span>
+                    </div>
+
+                    <div class="wrap-input100 validate-input m-b-23" data-validate="Campo Obrigatório">
+                        <span class="label-input100">Usuário</span>
+                        <input class="input100" type="text" name="username" placeholder="Digite seu nome de Usuário">
+                        <span class="focus-input100" data-symbol="&#xf206;"></span>
+                    </div>
+
+                    <div class="wrap-input100 validate-input m-b-23" data-validate="E-mail inválido">
+                        <span class="label-input100">E-mail</span>
+                        <input class="input100" type="email" name="e-mail" placeholder="Digite seu e-mail">
+                        <span class="focus-input100" data-symbol="&#xf190;"></span>
+                    </div>
+
+                    <div class="wrap-input100 validate-input m-b-23" data-validate="Campo Obrigatório">
+                        <span class="label-input100">Senha</span>
+                        <input class="input100" type="password" name="pass" placeholder="Digite sua Senha!Ex.: 123@#$Gks">
+                        <span class="focus-input100" data-symbol="&#xf190;"></span>
+                    </div>
+
+                    <div class="wrap-input100 validate-input m-b-23" data-validate="Campo Obrigatório">
+                        <span class=" label-input100 ">Repita sua Senha</span>
+                        <input class="input100 " type="password " name="pass " placeholder="Digite sua Senha novamente!">
+                        <span class="focus-input100 " data-symbol="&#xf190; "></span>
+                    </div>
+
+                    <div class="container-login100-form-btn ">
+                        <div class="wrap-login100-form-btn ">
+                            <div class="login100-form-bgbtn "></div>
+                            <button class="login100-form-btn ">
+								<a>Cadastrar-se</a>
+							</button>
+                        </div>
+                    </div>
+
+
+                    <div class="flex-col-c p-t-155 ">
+                        <a href="/Login " class="txt2 ">
+                            Login
+						</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="dropDownSelect1 "></div>
+
+    <script src="/Login_v4/vendor/jquery/jquery-3.2.1.min.js "></script>
+    <script src="/Login_v4/vendor/animsition/js/animsition.min.js "></script>
+    <script src="/Login_v4/vendor/bootstrap/js/popper.js "></script>
+    <script src="/Login_v4/vendor/bootstrap/js/bootstrap.min.js "></script>
+    <script src="/Login_v4/vendor/select2/select2.min.js "></script>
+    <script src="/Login_v4/vendor/daterangepicker/moment.min.js "></script>
+    <script src="/Login_v4/vendor/daterangepicker/daterangepicker.js "></script>
+    <script src="/Login_v4/vendor/countdowntime/countdowntime.js "></script>
+    <script src="/Login_v4/js/main.js "></script>
+
+</body>
+
+</html>
