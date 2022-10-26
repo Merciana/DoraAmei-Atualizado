@@ -1,4 +1,4 @@
-package com.example.DoraAmeiAtualizado.usuario.dominio;
+package com.example.DoraAmeiAtualizado.dominio;
 
 import java.util.Objects;
 
@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 public class Pessoa {
@@ -14,8 +16,10 @@ public class Pessoa {
     @GeneratedValue(strategy = GenerationType.AUTO)
 
     private Long id;
+    @NotBlank
     private String nome;
     private String username;
+    @Email
     private String email;
     private Integer password;
 
