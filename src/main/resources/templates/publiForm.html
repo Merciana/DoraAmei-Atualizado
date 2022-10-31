@@ -42,32 +42,37 @@
 
         <section>
             <div class="container" style="width: 70%;">
-                <nav aria-label="breadcrumb">
-                    <h5 style="text-align: center;">Nova Publicação</h5>
-                    </br>
-                </nav>
+                <div class="card gedf-card ">
+                    <div class="card-header ">
+                        <ul class="nav nav-tabs card-header-tabs " id="myTab " role="tablist ">
+                            <li class="nav-item ">
+                                <a class="nav-link  " id="posts-tab " data-toggle="tab " href="/publicacoes" role="tab " aria-controls="posts " aria-selected="true ">Publicações</a> </li>
+                            <li class="nav-item ">
+                                <a class="nav-link active" role="button" aria-selected="false ">Nova publicação</a> </li>
+                        </ul>
+                    </div>
+                </div>
                 <div>
                     <th:block th:include="mensagemValidacao"></th:block>
-                    <form method="publicacao">
+                    <form method="post" th:object="${publi}" th:action="@{/newpubli}">
                         <br class="form-group">
-                        <input type="text" class="form-control" name="titulo" placeholder="Título *"></br>
+                        <input type="text" class="form-control" name="titulo" placeholder="Título *" th:field="*{titulo}"></br>
+                        <input type="text" class="form-control" name="autor" placeholder="Autor *" th:field="*{autor}"></br>
+                        <textarea id="summernote" type="text" class="form-control" name="texto" placeholder="Texto *" th:field="*{texto}"></textarea></br>
+                        <small class="form-text text-muted">(*) Campos obrigatórios</small></br>
+
+                        <button class="btn btn-primary" type="submit" style="margin-top: 10px;">
+                            Publicar
+                        </button>
+
+                        <button class="btn btn-light" style="margin-top: 10px; ">
+                            Cancelar
+                        </button>
+                    </form>
                 </div>
-                <div class="form-group">
-                    <input type="text" class="form-control" name="autor" placeholder="Autor *"></br>
-                </div>
-
-                <textarea id="summernote" type="text" class="form-control" name="texto" placeholder="Texto *"></textarea></br>
-
-                <small class="form-text text-muted">(*) Campos obrigatórios</small></br>
-
-                <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Publicar</button>
-                <a href="/src/main/resources/templates/publicacoes.html" class="btn btn-light" role="button" style="margin-top: 10px;">Cancelar</a>
-                </form>
             </div>
+        </section>
     </div>
-    </section>
-    </div>
-
     <script>
         $('#summernote').summernote({
             placeholder: 'Texto *',

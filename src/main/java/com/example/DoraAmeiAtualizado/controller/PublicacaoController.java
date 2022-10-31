@@ -7,7 +7,9 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -40,13 +42,21 @@ public class PublicacaoController {
     }
 
     @RequestMapping(value = "/newpubli", method = RequestMethod.GET)
-    public String getPubliForm() {
-        return "publiForm";
+    public String getPubliForm(Model model) {
+        Publicacao p = new Publicacao();
+        model.addAttribute("publi", p);
+        System.out.println("getPubliForm(), entrou no metodo que nao tem nada");
+        return "/publiForm";
     }
 
     @RequestMapping(value = "/newpubli", method = RequestMethod.POST)
-    public String savePubli(@Valid Publicacao publicacao, BindingResult result, RedirectAttributes attributes) {
+    public String savePubli(@ModelAttribute @Valid Publicacao publicacao, BindingResult result,
+            RedirectAttributes attributes) {
+
+        System.out.println("Entrou no método  com varios parametros");
+
         if (result.hasErrors()) {
+            attributes.addFlashAttribute("mensagem", "Verifique se os campos obrigatórios foram preenchidos!");
             return "redirect:/newpubli";
         }
         publicacao.setData(LocalDate.now());
