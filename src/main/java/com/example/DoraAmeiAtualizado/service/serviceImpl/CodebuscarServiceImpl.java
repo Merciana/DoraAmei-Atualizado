@@ -12,6 +12,10 @@ public class CodebuscarServiceImpl {
 
     PessoaRepositorio repositorio;
 
+    public CodebuscarServiceImpl(PessoaRepositorio repositorio) {
+        this.repositorio = repositorio;
+    }
+
     public List<Pessoa> buscar_pessoas() {
         return repositorio.findAll();
     }
