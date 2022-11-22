@@ -1,4 +1,4 @@
-package com.example.DoraAmeiAtualizado.dominio;
+package com.example.DoraAmeiAtualizado.model;
 
 import java.util.Objects;
 

@@ -1,7 +1,9 @@
-package com.example.DoraAmeiAtualizado.dominio;
+package com.example.DoraAmeiAtualizado.repository;
 
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.example.DoraAmeiAtualizado.model.Pessoa;
 
 public interface PessoaRepositorio extends JpaRepository<Pessoa, Long> {
     List<Pessoa> findByNome(String nome);

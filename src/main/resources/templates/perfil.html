@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/perfil.css">
+</head>
+
+<body>
+    <div class="container bootstrap snippets bootdeys">
+        <div class="row" id="user-profile">
+            <div class="col-lg-3 col-md-4 col-sm-4">
+                <div class="main-box clearfix">
+                    <h2>John Doe </h2>
+                    <div class="profile-status">
+                        <i class="fa fa-check-circle"></i> Online
+                    </div>
+                    <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="" class="profile-img img-responsive center-block">
+
+                    <div class="profile-details">
+                        <ul class="fa-ul">
+                            <li><i class="fa-li fa fa-truck"></i>Orders: <span>456</span></li>
+                            <li><i class="fa-li fa fa-comment"></i>Posts: <span>828</span></li>
+                            <li><i class="fa-li fa fa-tasks"></i>Tasks done: <span>1024</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-9 col-md-8 col-sm-8">
+                <div class="main-box clearfix">
+                    <div class="profile-header">
+                        <h3><span>Informações</span></h3>
+                        <a href="#" class="btn btn-primary edit-profile">
+                            <i class="fa fa-pencil-square fa-lg"></i> Editar
+                        </a>
+                    </div>
+
+                    <div class="row profile-user-info">
+                        <div class="col-sm-8">
+                            <div class="profile-user-details clearfix">
+                                <div class="profile-user-details-label">
+                                    Nome
+                                </div>
+                                <div class="profile-user-details-value">
+                                    John
+                                </div>
+                            </div>
+                            <div class="profile-user-details clearfix">
+                                <div class="profile-user-details-label">
+                                    Sobrenome
+                                </div>
+                                <div class="profile-user-details-value">
+                                    Doe
+                                </div>
+                            </div>
+                            <div class="profile-user-details clearfix">
+                                <div class="profile-user-details-label">
+                                    Endereço
+                                </div>
+                                <div class="profile-user-details-value">
+                                    10880 Malibu Point,
+                                    <br> Malibu, Calif., 90265
+                                </div>
+                            </div>
+                            <div class="profile-user-details clearfix">
+                                <div class="profile-user-details-label">
+                                    Email
+                                </div>
+                                <div class="profile-user-details-value">
+                                    johndoe@bootdey.com
+                                </div>
+                            </div>
+                            <div class="profile-user-details clearfix">
+                                <div class="profile-user-details-label">
+                                    N°Telefone
+                                </div>
+                                <div class="profile-user-details-value">
+                                    011 223 344 556 677
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 profile-social">
+                            <ul class="fa-ul">
+                                <li><i class="fa-li fa fa-twitter-square"></i><a href="#">@scjohansson</a></li>
+                                <li><i class="fa-li fa fa-linkedin-square"></i><a href="#">John Doe </a></li>
+                                <li><i class="fa-li fa fa-facebook-square"></i><a href="#">John Doe </a></li>
+                                <li><i class="fa-li fa fa-skype"></i><a href="#">Black_widow</a></li>
+                                <li><i class="fa-li fa fa-instagram"></i><a href="#">Avenger_Scarlett</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="tabs-wrapper profile-tabs">
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a href="#posts " data-toggle="tab">Publicaçoes</a></li>
+                            <li><a href="#tab-friends" data-toggle="tab">Amigos</a></li>
+                            <li><a href="#tab-chat" data-toggle="tab">Lista de doramas</a></li>
+                        </ul>
+
+                        <div class="tab-content">
+                            <div class="tab-pane fade in active" id="tab-publicacoes">
+                                <div class="card shadow-sm bg-white rounded" style="margin-top: 20px;" th:each="publicacao : ${publicacoes}">
+                                    <div class="card-body">
+                                        <h4 class="card-title" style="font-weight: bold; color: black; padding-top: 5px;">
+                                            <span th:text="${publicacao.titulo}"></span>
+                                        </h4>
+                                        <p class="card-subtitle mb-2 text-muted">
+                                            <span th:text="${publicacao.autor}"></span>
+                                            <span th:text="${publicacao.data}"></span>
+                                        </p>
+
+                                        <p class="card-text">
+                                            <span th:utext="${#strings.abbreviate(publicacao.texto,1000)} "></span>
+                                        </p>
+
+                                    </div>
+                                    <div class="card-footer ">
+                                        <a href="# " class="card-link "><i class="fa fa-gittip "></i> Like</a>
+                                        <a href="# " class="card-link "><i class="fa fa-comment "></i> Comentar</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
